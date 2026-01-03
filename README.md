@@ -82,15 +82,25 @@ agent-ai/
 ├── uploads/             # Directory for user-uploaded documents
 └── .env                 # Environment variables
 ```
-
 ## 📸 Screenshots
 
-![Screenshot 1](screenshots/Screenshot%20(2).png)
-![Screenshot 2](screenshots/Screenshot%20(3).png)
-![Screenshot 3](screenshots/Screenshot%20(4).png)
-![Screenshot 4](screenshots/Screenshot%20(5).png)
-![Screenshot 5](screenshots/Screenshot%20(7).png)
+Below are some screenshots showcasing the key features and interface of the application:
+
+### 🖼️ Screenshot 1
+![Home Page](screenshots/screenshot1.jpeg)
+
+### 🖼️ Screenshot 2
+![Feature View](screenshots/screenshot2.jpeg)
+
+### 🖼️ Screenshot 3
+![Prediction Output](screenshots/screenshot3.jpeg)
+
+### 🖼️ Screenshot 4
+![Analytics / Results](screenshots/screenshot4.jpeg)
+
+
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
