@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic AI | Next-Gen Assistant</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Markdown Renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <i class="fa-solid fa-robot"></i>
+        <span>Agentic AI</span>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" onclick="loadChat('general')">
+          <i class="fa-solid fa-message"></i>
+          <span>Chat</span>
+        </button>
+        <div class="nav-divider"></div>
+        <div class="nav-label">Agencies</div>
+        <button class="nav-item" onclick="setQuickPrompt('What is the weather in Delhi tomorrow?')">
+          <i class="fa-solid fa-cloud-sun"></i>
+          <span>Weather Agent</span>
+        </button>
+        <button class="nav-item" onclick="setQuickPrompt('Check my meeting schedule for today')">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Meeting Agent</span>
+        </button>
+        <button class="nav-item" onclick="triggerFileUpload()">
+          <i class="fa-solid fa-file-contract"></i>
+          <span>Document Agent</span>
+        </button>
+      </nav>
+
+      <div class="user-profile">
+        <div class="avatar">U</div>
+        <div class="user-info">
+          <span class="name">User</span>
+          <span class="status">Online</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="chat-header">
+        <div class="header-info">
+          <h2>Assistant</h2>
+          <span class="badge">Online</span>
+        </div>
+        <div class="header-actions">
+          <button title="Clear Chat" onclick="clearChat()">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
+      </header>
+
+      <div id="drop-zone" class="drop-zone hidden">
+        <div class="drop-content">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <h3>Drop file to upload</h3>
+        </div>
+      </div>
+
+      <div id="chat-box" class="chat-box">
+        <!-- Messages will appear here -->
+        <div class="message bot intro">
+          <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+          <div class="content">
+            <p>Hello! I'm your Agentic AI assistant. I can help you with:</p>
+            <ul>
+              <li>Getting weather forecasts</li>
+              <li>Managing your meetings</li>
+              <li>Analyzing documents</li>
+            </ul>
+            <p>How can I assist you today?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <div class="input-container">
+          <button class="attach-btn" onclick="triggerFileUpload()" title="Upload Document">
+            <i class="fa-solid fa-paperclip"></i>
+          </button>
+          <input type="file" id="file-input" hidden onchange="handleFileUpload(this.files[0])">
+
+          <textarea id="user-input" placeholder="Type a message..." rows="1" onkeydown="handleEnter(event)"></textarea>
+
+          <button class="send-btn" onclick="sendMessage()">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+        <div class="footer-text">
+          AI can make mistakes. Please verify important information.
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/static/script.js"></script>
+</body>
+
+</html>
